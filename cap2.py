@@ -46,13 +46,21 @@ def cumulative_product (lista):
 # 		return uniquelist
 
 # Problem 14
+# def unique (lista, key):
+# 	if (len (lista) > 0):
+# 		uniquelist = [key (lista[0])]
+# 		for i in range (1, len (lista)):
+# 			if not (key (lista[i]) in uniquelist):
+# 				uniquelist.append (key (lista[i]))
+# 		return uniquelist
+
+# Problem 15
 def unique (lista, key):
 	if (len (lista) > 0):
-		uniquelist = [key (lista[0])]
+		uniquelist = {key (lista[0])}
 		for i in range (1, len (lista)):
-			if not (key (lista[i]) in uniquelist):
-				uniquelist.append (key (lista[i]))
-		return uniquelist		
+			uniquelist.add (key (lista[i]))
+		return uniquelist
 
 # Problem 11
 def dups (lista):
