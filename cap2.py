@@ -84,5 +84,8 @@ def group (lista, k):
 
 # Problem 13
 def lensort (lista):
-	if (len (lista) > 0):
-		return lista.sort (key = lambda x : len (x))
+		return sorted (lista, key = lambda x : len (x))
+
+# Problem 16
+def extsort (lista):
+	return sorted (lista, key = lambda x : x.split('.')[1])
