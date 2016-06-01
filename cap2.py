@@ -89,3 +89,7 @@ def lensort (lista):
 # Problem 16
 def extsort (lista):
 	return sorted (lista, key = lambda x : x.split('.')[1])
+
+# Problem 24
+def zip (lista1, lista2):
+	return [(x,y) for indx, x in enumerate(lista1) for indy, y in enumerate(lista2) if indx==indy]
