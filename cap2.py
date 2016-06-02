@@ -93,3 +93,6 @@ def extsort (lista):
 # Problem 24
 def zip (lista1, lista2):
 	return [(x,y) for indx, x in enumerate(lista1) for indy, y in enumerate(lista2) if indx==indy]
+
+def map (funcao, lista):
+	return [funcao(x) for x in lista]
