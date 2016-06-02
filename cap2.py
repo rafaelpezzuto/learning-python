@@ -96,3 +96,7 @@ def zip (lista1, lista2):
 
 def map (funcao, lista):
 	return [funcao(x) for x in lista]
+
+def filter(filtro, lista):
+	return [x for x in lista if filtro(x)]
+
