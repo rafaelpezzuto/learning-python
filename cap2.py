@@ -116,5 +116,12 @@ def array (linhas, colunas):
 
 # problem 30
 def parse_csv (arquivo):
-	dados = open (arquivo).readlines()
-	return [x.strip ('\n'). split(',') for x in dados]
+	dados = open (arquivo).readlines ()
+	return [x.strip ('\n').split (',') for x in dados]
+
+# problem 31
+def parse (arquivo, delimitador, comentarios):
+	dados = open (arquivo).readlines ()
+	return [x.strip ('\n').split (delimitador) for x in dados if x[0] != comentarios]
+
+# problem 32
