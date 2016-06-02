@@ -150,4 +150,9 @@ def mutate (palavra):
 	# troca dupla
 	palavras = palavras + [palavra[:pos] + palavra[pos:(pos + 2)][::-1] + palavra[(pos + 2):] for pos in range (tamanho)]
 
-	return unique (palavras, key=lambda s: s.lower())
+	return unique (palavras, key=lambda s: s.lower ())
+
+# problem 33
+def nearly_equal (palavra1, palavra2):
+	palavras = mutate (palavra2)
+	return palavra1 in palavras
