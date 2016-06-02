@@ -125,3 +125,29 @@ def parse (arquivo, delimitador, comentarios):
 	return [x.strip ('\n').split (delimitador) for x in dados if x[0] != comentarios]
 
 # problem 32
+def mutate (palavra):
+	# lista final de palavras
+	palavras = [palavra]
+
+	# tamanho da palavra original
+	tamanho = len (palavra)
+
+	# posicoes possiveis para mutar na palavra
+	lista_posicoes = range (tamanho)
+
+	# letras possiveis de serem adicionadas / trocadas
+	alfabeto = 'abcdefghijklmnopqrstuvwxyz'
+
+	# adicao
+	palavras = palavras + [palavra[:pos] + letra + palavra[(pos):] for pos in range (tamanho + 1) for letra in alfabeto]
+
+	# delecao
+	palavras = palavras + [palavra[:pos] + palavra[(pos + 1):] for pos in lista_posicoes]
+
+	# troca simples
+	palavras = palavras + [palavra[:pos] + letra + palavra[(pos + 1):] for pos in lista_posicoes for letra in alfabeto]
+
+	# troca dupla
+	palavras = palavras + [palavra[:pos] + palavra[pos:(pos + 2)][::-1] + palavra[(pos + 2):] for pos in range (tamanho)]
+
+	return unique (palavras, key=lambda s: s.lower())
