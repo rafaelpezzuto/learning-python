@@ -167,3 +167,13 @@ def valuesort (dicionario):
 	for keys in ordered_keys:
 		ordered_values.append (dicionario[keys])
 	return ordered_values
+
+# problem 38
+def invertdict (dicionario):
+	values = dicionario.values ()
+	keys = dicionario.keys ()
+	novo_dicionario = {}
+	tamanho = len (values)
+	for t in range (tamanho):
+		novo_dicionario[values[t]] = keys[t] 
+	return novo_dicionario
