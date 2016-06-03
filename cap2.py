@@ -156,3 +156,14 @@ def mutate (palavra):
 def nearly_equal (palavra1, palavra2):
 	palavras = mutate (palavra2)
 	return palavra1 in palavras
+
+# problem 36: falta implementar
+# def anagrams (lista):
+
+# problem 37
+def valuesort (dicionario):
+	ordered_keys = sorted (dicionario)
+	ordered_values = []
+	for keys in ordered_keys:
+		ordered_values.append (dicionario[keys])
+	return ordered_values
